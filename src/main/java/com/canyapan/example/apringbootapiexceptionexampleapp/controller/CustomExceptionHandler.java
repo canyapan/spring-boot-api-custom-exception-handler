@@ -15,8 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(MyCustomException.class)
     public final ResponseEntity<ErrorDetails> handleUserNotFoundException(MyCustomException ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(ex.getDetails(),
-                request.getDescription(false));
+        ErrorDetails errorDetails = new ErrorDetails(ex.getDetails(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 }
