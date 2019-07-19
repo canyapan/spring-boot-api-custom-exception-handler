@@ -1,0 +1,6 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'apring-boot-api-exception-example-app'
